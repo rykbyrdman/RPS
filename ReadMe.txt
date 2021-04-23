@@ -1,0 +1,1 @@
+Hi, this is a project for Rock Paper Scissors for The Odin Project :]

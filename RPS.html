@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <Body>
+        <head>
+            <title>Yay</title>
+            <meta charset="utf-8">
+        </head>
+        <Script>
+            function playerSelection() {
+                const answer = prompt("Rock, Paper, or Scissors?").toLowerCase();
+                if      (answer == "rock") {
+                    return "Rock";
+                }
+                else if (answer == "paper") {
+                    return "Paper";
+                }
+                else if (answer == "scissors") {
+                    return "Scissors";
+                }
+            }
+            console.log(playerSelection());
+            function computerPlay() {
+                const rN = (Math.floor(Math.random() * 3)) 
+                    if       (rN === 0) {
+                        return "Rock";
+                    }   else if (rN === 1) { 
+                        return "Paper";
+                    }   else 
+                        return "Scissors";
+            }
+            console.log(computerPlay());
+            function round1(playerSelection, computerSelection) {
+                if (computerPlay() == "Rock") {
+                    return "It's a tie.";
+                }   else if (computerPlay() == "Paper") {
+                    return "Paper beats Rock, you lose."
+                }   else 
+                    return "Rock beats Scissors, you win!"  
+            }
+            const computerSelection = computerPlay();
+            console.log(round1(playerSelection, computerSelection));
+        </script>
+    </Body>
+</html>
