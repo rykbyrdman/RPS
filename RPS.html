@@ -5,9 +5,11 @@
             <meta charset="utf-8">
         </head>
         <Script>
+            var compshot, answer;
+            for (let i=0; i<5; i++){
             function playerSelection() {
-                const answer = prompt("Rock, Paper, or Scissors?").toLowerCase();
-                if      (answer == "rock") {
+                answer = prompt("Rock, Paper, or Scissors?").toLowerCase();
+                /*if      (answer == "rock") {
                     return "Rock";
                 }
                 else if (answer == "paper") {
@@ -16,28 +18,49 @@
                 else if (answer == "scissors") {
                     return "Scissors";
                 }
+                */
+               return answer;
             }
             console.log(playerSelection());
             function computerPlay() {
-                const rN = (Math.floor(Math.random() * 3)) 
+                var rN = (Math.floor(Math.random() * 3)) 
                     if       (rN === 0) {
                         return "Rock";
                     }   else if (rN === 1) { 
                         return "Paper";
-                    }   else 
+                    }   else {
                         return "Scissors";
+                    }
             }
-            console.log(computerPlay());
-            function round1(playerSelection, computerSelection) {
-                if (computerPlay() == "Rock") {
-                    return "It's a tie.";
-                }   else if (computerPlay() == "Paper") {
-                    return "Paper beats Rock, you lose."
+            compshot = computerPlay();
+            console.log(compshot);
+            function round1(answer, compshot) {
+                if (compshot == "Rock") {
+                    if (answer == "rock")
+                        return "It's a tie.";
+                        if (answer == "paper")
+                        return "paper beats rock you win"
+                        if (answer == "scissors")
+                        return "rock beats scissors you lose"
+                }   else if (compshot == "Paper") {
+                    if (answer == "paper")
+                        return "It's a tie.";
+                        if (answer == "rock")
+                        return "paper beats rock you lose"
+                        if (answer == "scissors")
+                        return "scissors beats paper you win"
                 }   else 
+                if (answer == "scissors")
+                        return "It's a tie.";
+                        if (answer == "paper")
+                        return "scissors beats paper you lose"
+                        if (answer == "rock")
+                        return "rock beats scissors you win"
                     return "Rock beats Scissors, you win!"  
             }
-            const computerSelection = computerPlay();
-            console.log(round1(playerSelection, computerSelection));
-        </script>
+            //const computerSelection = computerPlay();
+            console.log(round1(answer, compshot));
+        }
+         </script>
     </Body>
 </html>
