@@ -5,10 +5,11 @@
             <meta charset="utf-8">
         </head>
         <Script>
+            var PCscore = 0, CPUscore = 0;
             var compshot, answer;
             for (let i=0; i<5; i++){
             function playerSelection() {
-                answer = prompt("Rock, Paper, or Scissors?")
+                answer = prompt("Rock, Paper, or Scissors?").toLowerCase();
                 /*if      (answer == "rock") {
                     return "Rock";
                 }
@@ -35,31 +36,60 @@
             compshot = computerPlay();
             console.log(compshot);
             function round1(answer, compshot) {
-                if (compshot == "Rock") {
-                    if (answer == "rock")
+                    if (compshot == "Rock") {
+                        if (answer == "rock")
                         return "It's a tie!";
                         if (answer == "paper")
                         return "Paper beats Rock, you win!"
                         if (answer == "scissors")
                         return "Rock beats Scissors, you lose..."
                 }   else if (compshot == "Paper") {
-                    if (answer == "paper")
+                        if (answer == "paper")
                         return "It's a tie!";
                         if (answer == "rock")
                         return "Paper beats Rock, you lose..."
                         if (answer == "scissors")
                         return "Scissors beat Paper, you win!"
                 }   else 
-                if (answer == "scissors")
+                        if (answer == "scissors")
                         return "It's a tie!";
                         if (answer == "paper")
                         return "Scissors beat Paper, you lose..."
                         if (answer == "rock")
                         return "Rock beats Scissors, you win!"  
             }
-            //const computerSelection = computerPlay();
+            function scoreboard() {
+                    if (compshot == "Rock") {
+                        if (answer == "rock")
+                        return;
+                        if (answer == "paper")
+                        return PCscore +=1;
+                        if (answer == "scissors")
+                        return CPUscore +=1;
+                }   else if (compshot == "Paper") {
+                        if (answer == "rock")
+                        return CPUscore +=1;
+                        if (answer == "scissors")
+                        return PCscore +=1;
+                }   else if (compshot == "Scissors")
+                        if (answer == "paper")
+                        return CPUscore +=1;
+                        if (answer == "rock")
+                        return PCscore +=1;
+            }
             console.log(round1(answer, compshot));
+            console.log(scoreboard());
         }
+        //const computerSelection = computerPlay();
+        function game() {
+            if (PCscore > CPUscore)
+            return "The User wins."
+            else if (CPUscore > PCscore)
+            return "The Computer wins."
+            else (CPUscore == PCscore)
+            return "The Game is a tie."
+        }
+        console.log(game());
          </script>
     </Body>
 </html>
